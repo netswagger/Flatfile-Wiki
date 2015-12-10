@@ -8,17 +8,7 @@
     </form>
 </div>
 <?php
-/* procedural API */
-$memcache_obj = memcache_connect('memcache_host', 11211);
 
-memcache_flush($memcache_obj);
-
-/* OO API */
-
-$memcache_obj = new Memcache;
-$memcache_obj->connect('memcache_host', 11211);
-
-$memcache_obj->flush();
 if(isset($_POST['submit'])){
     post($_POST['title'],$_POST['text']);
     echo'submited! Refreshing in 2 seconds... <meta http-equiv="refresh" content="2">';
